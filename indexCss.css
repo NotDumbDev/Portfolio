@@ -13,7 +13,6 @@
             position: relative;
         }
 
-        /* Subtle animated background */
         .bg-animation {
             position: fixed;
             top: 0;
@@ -40,7 +39,6 @@
             }
         }
 
-        /* Container */
         .container {
             display: flex;
             height: 100vh;
@@ -50,7 +48,6 @@
             gap: 20px;
         }
 
-        /* Sidebar Navigation */
         .sidebar {
             width: 280px;
             background: rgba(30, 41, 59, 0.9);
@@ -110,7 +107,6 @@
             box-shadow: 0 4px 20px rgba(59, 130, 246, 0.3);
         }
 
-        /* Main Content Area */
         .main-content {
             flex: 1;
             background: rgba(15, 23, 42, 0.9);
@@ -122,7 +118,6 @@
             box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
         }
 
-        /* Tab Content */
         .tab-content {
             display: none;
             animation: fade-in 0.5s ease;
@@ -144,7 +139,6 @@
             }
         }
 
-        /* Section Titles */
         .section-title {
             font-size: 2.5rem;
             margin-bottom: 30px;
@@ -164,7 +158,6 @@
             border-radius: 2px;
         }
 
-        /* Home Tab */
         .home-content {
             display: flex;
             flex-direction: column;
@@ -235,7 +228,6 @@
             transform: translateY(-2px);
         }
 
-        /* About Tab */
         .about-grid {
             display: grid;
             grid-template-columns: 250px 1fr;
@@ -264,7 +256,6 @@
             color: #cbd5e1;
         }
 
-        /* Skills Tab */
         .skills-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -317,8 +308,7 @@
             line-height: 1.6;
             font-size: 1rem;
         }
-
-        /* Portfolio Tab */
+        
         .portfolio-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
@@ -361,7 +351,6 @@
             transition: transform 0.3s ease;
         }
 
-        /* Fallback for broken images */
         .portfolio-image::before {
             content: '';
             position: absolute;
@@ -378,7 +367,6 @@
             z-index: -1;
         }
 
-        /* Image container for better control */
         .portfolio-image-container {
             position: relative;
             width: 100%;
@@ -399,7 +387,6 @@
             transform: scale(1.05);
         }
 
-        /* For images that fail to load */
         .portfolio-image:not([src]),
         .portfolio-image[src=""],
         .portfolio-image[src="#"] {
@@ -423,7 +410,6 @@
             color: #ffffff;
         }
 
-        /* Responsive adjustments */
         @media (max-width: 768px) {
 
             .portfolio-image,
@@ -484,7 +470,6 @@
             font-weight: 500;
         }
 
-        /* Review Tab */
         .review-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
@@ -531,7 +516,6 @@
             font-size: 1rem;
             flex-grow: 1;
             margin-top: 20px;
-            /* Account for quote mark */
         }
 
         .testimonial-author {
@@ -555,7 +539,6 @@
         .author-info {
             flex-grow: 1;
             min-width: 0;
-            /* Allows text to wrap properly */
         }
 
         .author-info h4 {
@@ -584,7 +567,6 @@
             gap: 2px;
         }
 
-        /* Mobile responsiveness */
         @media (max-width: 768px) {
             .review-grid {
                 grid-template-columns: 1fr;
@@ -655,8 +637,7 @@
                 width: auto;
             }
         }
-
-        /* Contact Tab */
+        
         .contact-intro {
             text-align: center;
             margin-bottom: 40px;
@@ -723,7 +704,6 @@
             font-size: 1rem;
         }
 
-        /* Mobile Responsive */
         @media (max-width: 1024px) {
             .container {
                 flex-direction: column;
@@ -788,7 +768,6 @@
             }
         }
 
-        /* Custom Scrollbar */
         .main-content::-webkit-scrollbar {
             width: 8px;
         }
