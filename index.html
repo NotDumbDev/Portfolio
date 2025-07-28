@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NotDumbDev - Home</title>
+    <link rel="stylesheet" href="indexCss.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <script src="indexScript.js" defer></script>
+    
+</head>
+<body>
+    <div class="bg-animation"></div>
+
+    <div class="container">
+        <aside class="sidebar">
+            <div class="logo">NotDumbDev</div>
+            <nav>
+                <ul class="nav-tabs">
+                    <li class="nav-tab active" data-tab="home">Home</li>
+                    <li class="nav-tab" data-tab="about">About</li>
+                    <li class="nav-tab" data-tab="skills">Skills</li>
+                    <li class="nav-tab" data-tab="portfolio">Portfolio</li>
+                    <li class="nav-tab" data-tab="review">Reviews</li>
+                    <li class="nav-tab" data-tab="contact">Contact</li>
+                </ul>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+            <div class="tab-content active" id="home">
+                <div class="home-content">
+                    <h1 class="hero-title">NotDumbDev</h1>
+                    <p class="hero-subtitle">
+                        Professional Roblox Scripter with 4.5 years of scripting experience with Roblox and Web Development.
+
+                    </p>
+                    <div class="cta-buttons">
+                        <button class="cta-button" onclick="switchTab('portfolio')">View Portfolio</button>
+                        <button class="cta-button" onclick="switchTab('contact')">Get In Touch</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tab-content" id="about">
+                <h2 class="section-title">About Me</h2>
+                <div class="about-grid">
+                    <div class="about-avatar"><i class="fa-solid fa-folder-open"></i></div>
+                    <div class="about-text">
+                        <p>Welcome to my portofolio! I'm a passionate Roblox developer with 4.5 years of scripting experience, creating everything from simple donation systems to advanced Discord -> Roblox integrations. </p>
+                        <p>I focus on clean, optimized code and work closely with clients to bring their ideas to life. My projects are designed for smooth performance, scalability, and great player experiences.</p>
+                        <p>I'm always learning and keep up with the latest Roblox updates, using modern scripting practices like OOP and performance tuning.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tab-content" id="skills">
+                <h2 class="section-title">Skills</h2>
+                <div class="skills-grid">
+                    <div class="skill-card">
+                        <span class="skill-icon"><i class="fa-solid fa-cube"></i></span>
+                        <h3>Modular OOP-Based Game Scripting</h3>
+                        <p>Custom, scalable scripts built with best practices to ensure easy maintenance and future expansions.</p>
+                    </div>
+                    <div class="skill-card">
+                        <span class="skill-icon"><i class="fa-solid fa-code-branch"></i></span>
+                        <h3>Data Handling Solutions</h3>
+                        <p>Secure and efficient management of player data, save/load systems.</p>
+                    </div>
+                    <div class="skill-card">
+                        <span class="skill-icon"><i class="fa-solid fa-keyboard"></i></span>
+                        <h3>Custom Chat Systems</h3>
+                        <p>Real time chat with moderation tools, filters, and customization options.</p>
+                    </div>
+                    <div class="skill-card">
+                        <span class="skill-icon"><i class="fa-solid fa-gun"></i></span>
+                        <h3>Polished Combat Systems</h3>
+                        <p>Responsive, balanced combat mechanics.</p>
+                    </div>
+                    <div class="skill-card">
+                        <span class="skill-icon"><i class="fa-solid fa-camera"></i></span>
+                        <h3>Custom Camera & Player Controllers</h3>
+                        <p>Semi Realistic camera movement and player movement to create immersive gameplay experiences.</p>
+                    </div>
+                    <div class="skill-card">
+                        <span class="skill-icon"><i class="fa-solid fa-file"></i></span>
+                        <h3>Inventory Systems</h3>
+                        <p>Dynamic item management supporting equipment and upgrades.</p>
+                    </div>
+                    <div class="skill-card">
+                        <span class="skill-icon"><i class="fa-solid fa-bug"></i></span>
+                        <h3>Performance Optimization & QA Testing</h3>
+                        <p>Code optimization, bug fixing, and thorough quality assurance for smooth, reliable games.</p>
+                    </div>
+                    <div class="skill-card">
+                        <span class="skill-icon"><i class="fa-solid fa-server"></i></span>
+                        <h3>Discord-Roblox Integrations</h3>
+                        <p>Cross-platform bots and webhook setups to connect your game with Discord communities seamlessly.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tab-content" id="portfolio">
+                <h2 class="section-title">Featured Projects</h2>
+                <div class="portfolio-grid">
+                    <div class="portfolio-item">
+                        <img class="portfolio-image" src="img/dcrbx.png"></img>
+                        <div class="portfolio-content">
+                            <h3>Discord to Roblox System</h3>
+                            <p>A system designed for Discord to Roblox communication, made without even spending a single cent!</p>
+                            <div class="portfolio-tags">
+                                <span class="tag">Cross-platform</span>
+                                <span class="tag">Multi Language</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="portfolio-item">
+                        <img class="portfolio-image" src="img/firstperson.png"></img>
+                        <div class="portfolio-content">
+                            <h3>First Person System</h3>
+                            <p>A system designed for Realistic FPS systems or shooters in general.</p>
+                            <div class="portfolio-tags">
+                                <span class="tag">Semi-Realistic</span>
+                                <span class="tag">FPS</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="portfolio-item">
+                        <img class="portfolio-image" src="img/mx.png"></img>
+                        <div class="portfolio-content">
+                            <h3>MotionX</h3>
+                            <p>A library used to manage Animations easily.</p>
+                            <div class="portfolio-tags">
+                                <span class="tag">Library</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tab-content" id="review">
+                <h2 class="section-title">Client Reviews</h2>
+                <div class="review-grid">
+                    <div class="testimonial-card">
+                        <p class="testimonial-text">very fantastic scripter, always helped and came up for tasks</p>
+                        <div class="testimonial-author">
+                            <img class="author-avatar" src="https://cdn.discordapp.com/avatars/1291465344338366515/a_76fc6363e0f29cc512af9a414bb8e29f.webp?size=80"></img>
+                            <div class="author-info">
+                                <h4>Anony</h4>
+                                <p>Manager, Meme Battlegrounds (Cancelled Project)</p>
+                            </div>
+                            <div class="rating">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-regular fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tab-content" id="contact">
+                <h2 class="section-title">Get In Touch</h2>
+                <div class="contact-intro">
+                    <p>Available only for one time commissions. Reach out with your project details and I will try to reply as soon as possible!</p>
+                </div>
+                
+                <div class="primary-contact">
+                    <div class="contact-item large">
+                        <div class="contact-icon"><i class="fa-brands fa-discord"></i></div>
+                        <h3>Discord</h3>
+                        <p class="contact-value">euro_fighter.</p>
+                        <span class="contact-note">Primary contact method</span>
+                    </div><br>
+                    <div class="contact-item large">
+                        <div class="contact-icon"><i class="fa-solid fa-envelope"></i></div>
+                        <h3>Email</h3>
+                        <a href="mailto:notdumbdev0@gmail.com" class="contact-link">notdumbdev0@gmail.com</a>
+                        <span class="contact-note">Click to send email</span>
+                    </div>
+                </div>
+
+                <div class="contact-grid">
+                    <div class="contact-item">
+                        <div class="contact-icon"><i class="fa-solid fa-hourglass"></i></div>
+                        <h3>Availability</h3>
+                        <p>Available almost every day except on saturdays and sundays</p>
+                        <span class="timezone">UTC+2</span>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon"><i class="fa-solid fa-comment"></i></div>
+                        <h3>Response Time</h3>
+                        <p>Usually within 2 hours</p>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon"><i class="fa-solid fa-money-check-dollar"></i></div>
+                        <h3>Payment</h3>
+                        <p>Robux Only</p>
+                        <span class="timezone">10% Upfront should be given!</span>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+</body>
+</html>
