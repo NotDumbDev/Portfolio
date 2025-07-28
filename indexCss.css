@@ -9,8 +9,13 @@
             background: linear-gradient(135deg, #0a0a1a 0%, #1a1a2e 50%, #16213e 100%);
             color: #e0e6ed;
             height: 100vh;
-            overflow: hidden;
             position: relative;
+        }
+
+        @media (min-width: 768px) {
+            body {
+                overflow: hidden;
+            }
         }
 
         .bg-animation {
@@ -824,5 +829,29 @@
         .contact-link:hover {
             color: #60a5fa;
             text-decoration: underline;
+            transform: translateY(-2px);
+        }
+
+        .pdf-download {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px 20px;
+            background-color: rgba(59, 130, 246, 0.1); /* bluish glass look */
+            border: 1px solid rgba(59, 130, 246, 0.3);
+            border-radius: 8px;
+            color: #cbd5e1;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(6px);
+        }
+
+        .pdf-download:hover {
+            background-color: rgba(59, 130, 246, 0.2);
+            border-color: rgba(59, 130, 246, 0.5);
+            color: #ffffff;
+            box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);
             transform: translateY(-2px);
         }
