@@ -12,8 +12,80 @@ function switchTab(tabName) {
         document.querySelector(`[data-tab="${tabName}"]`).classList.add('active');
         document.getElementById(tabName).classList.add('active');
 
+        if (tabName === 'statistics') {
+            setTimeout(() => {
+                animateStats();
+            }, 300);
+        }
+
         loadingBar.style.transform = 'scaleX(0)';
     }, 200);
+}
+
+function animateCounter(element, target, duration = 2000, suffix = '') {
+    let start = 0;
+    const startTime = Date.now();
+    
+    function formatNumber(num) {
+        if (num >= 1000000) {
+            return (num / 1000000).toFixed(1) + 'M';
+        }
+        return num.toString();
+    }
+    
+    function updateCounter() {
+        const elapsed = Date.now() - startTime;
+        const progress = Math.min(elapsed / duration, 1);
+        
+        const easeOutQuart = 1 - Math.pow(1 - progress, 4);
+        const current = Math.floor(start + (target - start) * easeOutQuart);
+        
+        if (target === 4500000) {
+            element.textContent = formatNumber(current);
+        } else if (target === 10000) {
+            element.textContent = formatNumber(current) + suffix;
+        } else {
+            element.textContent = current + suffix;
+        }
+        
+        if (progress < 1) {
+            requestAnimationFrame(updateCounter);
+        } else {
+            if (target === 4500000) {
+                element.textContent = '4.5M';
+            } else if (target === 10000) {
+                element.textContent = '10k€';
+            } else {
+                element.textContent = target + suffix;
+            }
+        }
+    }
+    
+    requestAnimationFrame(updateCounter);
+}
+
+function animateStats() {
+    const statNumbers = document.querySelectorAll('.stat-number');
+    const statCards = document.querySelectorAll('.stat-card');
+    
+    statCards.forEach((card, index) => {
+        setTimeout(() => {
+            card.classList.add('animate');
+        }, index * 200);
+    });
+    
+    statNumbers.forEach((element, index) => {
+        setTimeout(() => {
+            const target = parseInt(element.getAttribute('data-target'));
+            let suffix = '';
+            
+            if (target === 10000) {
+                suffix = '€';
+            }
+            
+            animateCounter(element, target, 2500, suffix);
+        }, index * 300 + 500);
+    });
 }
 
 document.querySelectorAll('.nav-tab').forEach(tab => {
@@ -22,7 +94,6 @@ document.querySelectorAll('.nav-tab').forEach(tab => {
         const tabName = tab.getAttribute('data-tab');
         switchTab(tabName);
 
-        // Add haptic feedback simulation
         if (navigator.vibrate) {
             navigator.vibrate(50);
         }
@@ -52,11 +123,33 @@ const observer = new IntersectionObserver((entries) => {
     });
 }, observerOptions);
 
+const statsObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting && entry.target.classList.contains('stats-grid')) {
+            const statsTab = document.getElementById('statistics');
+            if (statsTab && statsTab.classList.contains('active')) {
+                setTimeout(() => {
+                    animateStats();
+                }, 200);
+            }
+        }
+    });
+}, {
+    threshold: 0.3
+});
+
 document.querySelectorAll('.skill-card, .portfolio-item, .testimonial-card, .contact-item').forEach(element => {
     element.style.opacity = '0';
     element.style.transform = 'translateY(20px)';
     element.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
     observer.observe(element);
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+    const statsGrid = document.querySelector('.stats-grid');
+    if (statsGrid) {
+        statsObserver.observe(statsGrid);
+    }
 });
 
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -72,53 +165,15 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-function addRippleEffect(element) {
-    element.addEventListener('click', function (e) {
-        const ripple = document.createElement('span');
-        const rect = this.getBoundingClientRect();
-        const size = Math.max(rect.width, rect.height);
-        const x = e.clientX - rect.left - size / 2;
-        const y = e.clientY - rect.top - size / 2;
 
-        ripple.style.width = ripple.style.height = size + 'px';
-        ripple.style.left = x + 'px';
-        ripple.style.top = y + 'px';
-        ripple.classList.add('ripple');
-
-        this.appendChild(ripple);
-
-        setTimeout(() => {
-            ripple.remove();
-        }, 600);
-    });
-}
-
-document.querySelectorAll('.cta-button, .nav-tab, .contact-item').forEach(addRippleEffect);
-
-const rippleStyle = document.createElement('style');
-rippleStyle.textContent = `
-            .ripple {
-                position: absolute;
-                border-radius: 50%;
-                background: rgba(16, 185, 129, 0.3);
-                transform: scale(0);
-                animation: ripple-animation 0.6s linear;
-                pointer-events: none;
-            }
-            
-            @keyframes ripple-animation {
-                to {
-                    transform: scale(2);
-                    opacity: 0;
-                }
-            }
-            
-            .nav-tab, .cta-button, .contact-item {
-                position: relative;
-                overflow: hidden;
-            }
-        `;
-document.head.appendChild(rippleStyle);
+const glowStyle = document.createElement('style');
+glowStyle.textContent = `
+    @keyframes iconGlow {
+        0% { filter: drop-shadow(0 0 5px rgba(16, 185, 129, 0.3)); }
+        100% { filter: drop-shadow(0 0 15px rgba(16, 185, 129, 0.8)); }
+    }
+`;
+document.head.appendChild(glowStyle);
 
 window.addEventListener('load', () => {
     document.body.style.opacity = '1';
