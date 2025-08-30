@@ -172,7 +172,7 @@ glowStyle.textContent = `
         0% { filter: drop-shadow(0 0 5px rgba(16, 185, 129, 0.3)); }
         100% { filter: drop-shadow(0 0 15px rgba(16, 185, 129, 0.8)); }
     }
-`;
+`; // old code ig
 document.head.appendChild(glowStyle);
 
 window.addEventListener('load', () => {
@@ -220,7 +220,6 @@ function updateTime() {
     document.getElementById('current-time').textContent = timeString;
 }
 
-// Update immediately and then every second
 updateTime();
 setInterval(updateTime, 1000);
 
