@@ -205,6 +205,26 @@ entranceStyle.textContent = `
                 }
             }
         `;
+        
+function updateTime() {
+    const now = new Date();
+    const germanTime = new Date(now.toLocaleString("en-US", {timeZone: "Europe/Berlin"}));
+    
+    const timeString = germanTime.toLocaleTimeString('en-US', {
+        hour12: false,
+        hour: '2-digit',
+        minute: '2-digit',
+        second: '2-digit'
+    });
+    
+    document.getElementById('current-time').textContent = timeString;
+}
+
+// Update immediately and then every second
+updateTime();
+setInterval(updateTime, 1000);
+
 document.head.appendChild(entranceStyle);
+
 
 console.log("why you spying here");
