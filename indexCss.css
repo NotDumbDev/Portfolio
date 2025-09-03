@@ -175,6 +175,7 @@ body {
         opacity: 0;
         transform: translateY(10px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
@@ -586,6 +587,7 @@ body {
         opacity: 0;
         transform: translateY(10px);
     }
+
     100% {
         opacity: 1;
         transform: translateY(0);
@@ -1025,6 +1027,7 @@ body {
 }
 
 @media (max-width: 768px) {
+
     .sidebar,
     .main-content {
         padding: 0;
@@ -1191,11 +1194,10 @@ li::before {
 /*ok */
 
 .italian-flag {
-    background: linear-gradient(90deg, 
-        #009246 0% 33.33%, 
-        #FFFFFF 33.33% 66.66%, 
-        #CE2B37 66.66% 100%
-    );
+    background: linear-gradient(90deg,
+            #009246 0% 33.33%,
+            #FFFFFF 33.33% 66.66%,
+            #CE2B37 66.66% 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -1203,11 +1205,10 @@ li::before {
 }
 
 .german-flag {
-    background: linear-gradient(180deg, 
-        #000000 0% 33.33%, 
-        #DD0000 33.33% 66.66%, 
-        #FFCE00 66.66% 100%
-    );
+    background: linear-gradient(180deg,
+            #000000 0% 33.33%,
+            #DD0000 33.33% 66.66%,
+            #FFCE00 66.66% 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -1217,11 +1218,10 @@ li::before {
 }
 
 .jet-fighter {
-    background: linear-gradient(45deg, 
-        #3d5888 0%, 
-        #2f4c78 50%, 
-        #203b68 100%
-    );
+    background: linear-gradient(45deg,
+            #3d5888 0%,
+            #2f4c78 50%,
+            #203b68 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -1230,15 +1230,14 @@ li::before {
 }
 
 .palette-colorful {
-    background: linear-gradient(45deg, 
-        #E40303 0%,
-        #FF8C00 16.66%,
-        #FFED00 33.33%,
-        #008018 50%,
-        #004CFF 66.66%,
-        #732982 83.33%,
-        #732982 100%
-    );
+    background: linear-gradient(45deg,
+            #E40303 0%,
+            #FF8C00 16.66%,
+            #FFED00 33.33%,
+            #008018 50%,
+            #004CFF 66.66%,
+            #732982 83.33%,
+            #732982 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -1247,11 +1246,10 @@ li::before {
 }
 
 .contract-business {
-    background: linear-gradient(135deg, 
-        #6e8dd0 0%, 
-        rgb(55, 141, 212) 50%, 
-        #0c3f67 100%
-    );
+    background: linear-gradient(135deg,
+            #6e8dd0 0%,
+            rgb(55, 141, 212) 50%,
+            #0c3f67 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -1260,13 +1258,12 @@ li::before {
 }
 
 .transgender-flag {
-    background: linear-gradient(90deg, 
-        #5BCEFA 0% 20%, 
-        #F5A9B8 20% 40%, 
-        #FFFFFF 40% 60%, 
-        #F5A9B8 60% 80%, 
-        #5BCEFA 80% 100%
-    );
+    background: linear-gradient(90deg,
+            #5BCEFA 0% 20%,
+            #F5A9B8 20% 40%,
+            #FFFFFF 40% 60%,
+            #F5A9B8 60% 80%,
+            #5BCEFA 80% 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -1388,4 +1385,98 @@ li::before {
 .roblox-icon:hover img {
     transform: scale(1.2) rotate(-5deg);
     filter: invert(60%) sepia(70%) saturate(2800%) hue-rotate(265deg) brightness(110%) contrast(100%);
+}
+
+.tech-stack-section {
+    margin-top: 48px;
+    margin-bottom: 32px;
+}
+
+.tech-stack-title {
+    font-size: 2rem;
+    font-weight: 700;
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 24px;
+    text-align: center;
+}
+
+.tech-stack-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 24px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.tech-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 32px 24px;
+    text-align: center;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.tech-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(90deg, var(--primary), var(--secondary));
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.tech-card:hover::before {
+    opacity: 1;
+}
+
+.tech-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--primary);
+    box-shadow: 0 12px 32px rgba(139, 92, 246, 0.2);
+}
+
+.tech-icon {
+    font-size: 3rem;
+    margin-bottom: 16px;
+    display: block;
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.tech-card h3 {
+    color: var(--text-primary);
+    font-size: 1.4rem;
+    margin-bottom: 12px;
+    font-weight: 700;
+}
+
+.tech-card p {
+    color: var(--text-secondary);
+    line-height: 1.6;
+    font-size: 1rem;
+    margin-bottom: 16px;
+}
+
+.roblox-icon-luau img {
+    width: 3rem;
+    height: 3rem;
+    margin-bottom: 16px;
+    display: block;
+    filter: invert(46%) sepia(92%) saturate(635%) hue-rotate(250deg) brightness(95%) contrast(95%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    position:relative;
+    left: 6rem;
 }
