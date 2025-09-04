@@ -29,6 +29,8 @@ function animateCounter(element, target, duration = 2000, suffix = '') {
     function formatNumber(num) {
         if (num >= 1000000) {
             return (num / 1000000).toFixed(1) + 'M';
+        } else if (num >= 10000) {
+            return (num / 10000).toFixed(1) + 'K';
         }
         return num.toString();
     }
@@ -53,8 +55,8 @@ function animateCounter(element, target, duration = 2000, suffix = '') {
         } else {
             if (target === 4500000) {
                 element.textContent = '4.5M';
-            } else if (target === 10000) {
-                element.textContent = '10k€';
+            } else if (target === 11000) {
+                element.textContent = '11K€';
             } else {
                 element.textContent = target + suffix;
             }
