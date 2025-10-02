@@ -248,3 +248,4 @@ window.addEventListener("click", (e) => {
         aboutModal.style.display = "none" 
     }
 }) 
+ 
