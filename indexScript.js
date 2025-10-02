@@ -229,7 +229,7 @@ document.querySelectorAll(".close-btn").forEach(btn => {
     btn.addEventListener("click", () => {
         const modal = btn.closest(".modal") 
         modal.style.display = "none" 
-    }) 
+    })  
 }) 
 
 if (copyBtn) {
@@ -248,4 +248,4 @@ window.addEventListener("click", (e) => {
         aboutModal.style.display = "none" 
     }
 }) 
- 
+   
