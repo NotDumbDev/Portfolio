@@ -1,5 +1,6 @@
 const cursor = document.getElementById("cursor") 
 const hoverElements = document.querySelectorAll("a, .close-btn, .skill-item, .cta-button, .contact-link, .review-card, .time-info-container") 
+const robloxId = 4067261404
 
 let forceCenter = null
 let cursorSize = { width: 20, height: 20 } 
@@ -7,6 +8,7 @@ let mouse = { x: window.innerWidth / 2, y: window.innerHeight / 2 }
 let target = { x: mouse.x, y: mouse.y } 
 let rotation = 0
 let canSpin = true
+
 
 document.addEventListener("mousemove", (e) => {
     mouse.x = e.clientX 
@@ -249,3 +251,114 @@ window.addEventListener("click", (e) => {
     }
 }) 
      
+
+async function fetchInfoProfile() {
+    const container = document.getElementById("robloxProfile")
+    
+    try {
+        const [userResponse, thumbnailResponse] = await Promise.all([
+            fetch(`https://users.roproxy.com/v1/users/${robloxId}`),
+            fetch(`https://thumbnails.roproxy.com/v1/users/avatar-headshot?userIds=${robloxId}&size=150x150&format=Png&isCircular=false`)
+        ])
+        
+        const userData = await userResponse.json()
+        const thumbnailData = await thumbnailResponse.json()
+        const avatarUrl = thumbnailData.data[0]?.imageUrl || ""
+        
+        let statusClass = "offline"
+        let statusText = "Offline"
+        let activityInfo = null
+        
+        try {
+            const presenceResponse = await fetch(
+            `https://corsproxy.io/?https://presence.roproxy.com/v1/presence/users/`,
+            {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ userIds: [robloxId] })
+            }
+            )
+
+            if (presenceResponse.ok) {
+
+                const presenceData = await presenceResponse.json()
+                const presence = presenceData.userPresences?.[0]
+
+                console.log(presenceData)
+                
+                if (presence) {
+                    switch(presence.userPresenceType) {
+                        case 0: statusClass = "offline"; statusText = "Offline"; break
+                        case 1: statusClass = "online"; statusText = "Online"; break
+                        case 2: 
+                            statusClass = "in-game";
+                            statusText = "In Game"
+                            activityInfo = { game: presence.lastLocation || "Playing Roblox" }
+                            break
+                        case 3: statusClass = "in-studio"; statusText = "In Studio"; break;
+                    }
+                }
+            }
+        } catch (presenceError) {
+            console.log("data unavailable!")
+        }
+
+        let statusIcon = ''
+        switch(statusClass) {
+            case 'online':
+                statusIcon = '<i class="fa-solid fa-earth-europe"></i>'
+                break;
+            case 'in-game':
+                statusIcon = '<i class="fa-solid fa-diamond"></i>'
+                break;
+            case 'in-studio':
+                statusIcon = '<i class="fa-solid fa-code"></i>'
+                break;
+            default:
+                statusIcon = '<i class="fa-regular fa-circle-xmark"></i>'
+                break;
+        }
+                
+        let html = `
+            <div class="profile-header">
+                <div class="avatar-container">
+                    <img src="${avatarUrl}" alt="${userData.displayName}" class="avatar-image">
+                    <div class="status-indicator ${statusClass}">
+                        ${statusIcon}
+                    </div>
+                </div>
+                <div class="profile-info">
+                    <h3>${userData.displayName}</h3>
+                    <p class="status-text ${statusClass}">
+                        ${statusText}
+                    </p>
+                </div>
+            </div>
+            <div class="activity-details">
+                <div class="activity-item">
+                    <span class="activity-label">Username</span>
+                    <span class="activity-value">@${userData.name}</span>
+                </div>
+        `
+        
+        if (activityInfo) {
+            html += `
+                <div class="activity-item">
+                    <span class="activity-label">Currently</span>
+                    <span class="activity-value">Playing</span>
+                </div>
+                <p class="game-name">${activityInfo.game}</p>
+            `
+        }
+        
+        html += `</div>`
+        container.innerHTML = html
+        
+    } catch (error) {
+        console.error("Error fetching Roblox profile:", error)
+        container.innerHTML = '<div style="color: #ff6b6b; text-align: center; padding: 1rem; font-size: 0.9rem;">Unable to load profile</div>'
+    }
+}
+
+fetchInfoProfile()
+setInterval(fetchInfoProfile, 30000)
