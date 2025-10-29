@@ -1,482 +1,315 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>NotDumbDev's Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 
-    <!-- Primary Meta Tags -->
-    <title>NotDumbDev</title>
-    <meta name="title" content="NotDumbDev - Home">
-    <meta name="description" content="Professional Roblox Scripter with 5 years of scripting experience with Roblox Luau. ">
-
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://notdumbdev.github.io/Portfolio/">
-    <meta property="og:title" content="NotDumbDev - Home">
-    <meta property="og:description" content="Professional Roblox Scripter with 5 years of scripting experience with Roblox Luau. ">
-    <meta property="og:image" content="https://notdumbdev.github.io/Portfolio/img/newheader.png">
-
-    <!-- X (Twitter) -->
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://notdumbdev.github.io/Portfolio/">
-    <meta property="twitter:title" content="NotDumbDev - Home">
-    <meta property="twitter:description" content="Professional Roblox Scripter with 5 years of scripting experience with Roblox Luau. ">
-    <meta property="twitter:image" content="https://notdumbdev.github.io/Portfolio/img/newheader.png">
-    
-
-
-    <link rel="icon" type="image/x-icon" href="img/favicon.ico"> 
-    
-    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    <link href="indexCss.css", rel="stylesheet">
-    <title>NotDumbDev</title>
-    <script src="indexScript.js" defer></script>
+  <link rel="stylesheet" href="indexCss.css">
+  <script src="indexScript.js" defer></script>
 </head>
 <body>
-    <div class="cursor" id="cursor">
-        <div class="cursor-dot"></div>
-        <div class="cursor-border top"></div>
-        <div class="cursor-border right"></div>
-        <div class="cursor-border bottom"></div>
-        <div class="cursor-border left"></div>
-    </div>
-
-
+  <div class="cursor"></div>
+  <canvas id="stars"></canvas>
+  <header>
+    <div class="logo">NotDumbDev</div>
     <nav>
-        <div class="nav-container">
-            <div class="logo">NotDumbDev</div>
-            <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#reviews">Reviews</a></li>
-                <li><a href="#termsandconditions">Terms</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </div>
+      <a href="#home">Home</a>
+      <a href="#projects">Projects</a>
+      <a href="#groups">Groups</a>
+      <a href="#skills">Skills</a>
+      <a href="#reviews">Reviews</a>
+      <a href="#terms">Terms</a>
+      <a href="#contact">Contact</a>
     </nav>
+  </header>
 
-    <section id="home" class="header">
-        <div class="header-content">
-            <br><br>
-            <div class="roblox-profile-card" id="robloxProfile">
-                <div style="color: #ff69b4; text-align: center; padding: 2rem;">Loading...</div>
-            </div>
-            <h1>hey, im NotDumbDev</h1>
-            <p class="subtitle">Roblox Scripter with 5 years of scripting experience with Roblox Luau.</p>
-            <p>I'm a Roblox developer with 5 years of scripting experience, creating almost everything from simple donation systems to advanced Discord > Roblox integrations. I focus on clean & optimized code, and use coding practices like OOP and modular scripting for smooth and scalable code aswell as performance.</p>
-            
-            <div class="time-info-container">
-                <div class="time-info-item">
-                    <span class="time-label"><i class="fa-solid fa-location-pin"></i> Based in</span>
-                    <span class="time-value">Saarland, Germany</span>
-                </div>
-                <div class="time-separator">—</div>
-                <div class="time-info-item">
-                    <span class="time-label"><i class="fa-solid fa-clock"></i> Current Time</span>
-                    <span class="time-value" id="current-time">Loading...</span>
-                </div>
-                <div class="time-separator">—</div>
-                <div class="time-info-item">
-                    <span class="time-label"><i class="fa-solid fa-globe"></i> Timezone</span>
-                    <span class="time-value" id="timezone-info">Loading...</span>
-                </div>
-            </div>
+  <section id="home" class="mainheader">
+    <div id="robloxProfile">Loading Roblox Profile...</div>
 
-            <div class="tech-stack-container">
-                <div class="tech-stack">
-                    <span class="tech-item">JavaScript</span>
-                    <span class="tech-item">NodeJS</span>
-                    <span class="tech-item">Roblox React</span>
-                    <span class="tech-item">Lua(u)</span>
-                    <span class="tech-item">Python</span>
-                    <span class="tech-item">Knit</span>
-                    <span class="tech-item">TypeScript</span>
-                    <span class="tech-item">Git</span>
-                    <span class="tech-item">Wally</span>
-                    <span class="tech-item">Rojo</span>
-                    <span class="tech-item">VSCode</span>
-                    <span class="tech-item">Figma</span>
-                </div>
-            </div>
+    <h1 style="padding-bottom: 10px;">hey, im <span style="color:var(--accent)"> NotDumbDev </span></h1>
+    <p>Roblox Scripter with 5 years of scripting experience with <strong>Roblox Luau</strong>. And 1.5 months of experience with <strong>rbxts</strong></p>
 
-            <a href="#projects" class="cta-button">look at my work!</a>
-            <a href="#contact" class="cta-button">contact me!</a>
-            <a id="about-me-btn" class="cta-button">about me!</a>
-        </div>
-    </section>
-
-    <section id="projects">
-        <h2>Projects</h2>
-        <h1 style="font-size: large; text-align: center; position: relative; bottom: 3rem; color: gray;"><em>Solo-Projects & Commissions</em></h1>
-        <h1 style="font-size: large; text-align: center; position: relative; bottom: 3rem;">Additionally, video showcases will be shown upon being asked.</h1>
-        <div class="projects-grid">
-            <div class="project-card">
-                <h3>Discord to Roblox System</h3>
-                <img src="img/DCRBX.png" class="project-image">
-                <p>I created a discord bot to roblox system, which allowed you to ban, kick or send global announcements directly via discord. </p>
-                <div class="project-tags">
-                    <span class="tag">Cross-platform</span>
-                    <span class="tag">Multi-Language</span>
-                    <span class="tag">Solo Project</span>
-                </div>
-            </div>
-            <div class="project-card">
-                <h3>Loaded all airports in the world</h3>
-                <img src="img/airports.png" class="project-image">
-                <p>I made a system using OSM & Luau which loaded every airport in the world in my game, somehow pulled it off in less than 2 months</p>
-                <div class="project-tags">
-                    <span class="tag">Cross-platform</span>
-                    <span class="tag">Solo Project</span>
-                </div>
-            </div>
-            <div class="project-card">
-                <h3>First Person System</h3>
-                <img src="img/firstperson.png" class="project-image">
-                <p>A system designed for Realistic FPS systems or shooters in general.</p>
-                <div class="project-tags">
-                    <span class="tag">Semi-Realistic</span>
-                    <span class="tag">FPS</span>
-                    <span class="tag">Solo Project</span>
-                </div>
-            </div>
-            <div class="project-card">
-                <h3>MotionX</h3>
-                <img src="img/mx.png" class="project-image">
-                <p>A library i made which is used to manage Animations easily.</p>
-                <div class="project-tags">
-                    <span class="tag">Library</span>
-                    <span class="tag">Solo Project</span>
-                    <span class="tag"><a style="color: #fff; cursor: none;" href="https://devforum.roblox.com/t/motionx-a-clean-extensible-animation-manager/3824716">Link</a></span>
-                </div>
-            </div>
-            <div class="project-card">
-                <h3>Pulse</h3>
-                <img src="img/pulse.png" class="project-image">
-                <p>A library i created to make cross server events and messaging easier.</p>
-                <div class="project-tags">
-                    <span class="tag">Library</span>
-                    <span class="tag">Solo Project</span>
-                    <span class="tag"><a style="color: #fff; cursor: none;" href="https://devforum.roblox.com/t/pulse-structured-reliable-messaging-for-roblox/3890184">Link</a></span>
-                </div>
-            </div>
-            
-            <div class="project-card">
-                <h3>Steal a Type Games</h3>
-                <p>I've worked on 2 'steal a' game projects, but their owners told me not to say anything on this,.</p>
-                <div class="project-tags">
-                    <span class="tag">Commission</span>
-                </div>
-            </div>
-            <div class="project-card">
-                <h3>Dash & Combat System</h3>
-                <p>I've made a Dash & Combat system, but unfortunately the guy scammed me.</p>
-                <div class="project-tags">
-                    <span class="tag">Commission</span>
-                    <span class="tag">Combat</span>
-                </div>
-            </div>
-        </div>
-        
-        <br><h2>Contributed Groups</h2>
-        <div class="projects-grid">
-            <div class="roblox-group-card">
-                <h3>Blissful Studio Co. - 48k Members</h3>
-                <p>I was commissioned to script a full game here, tho i won't say anything about it for confidentiality.</p>
-                <a href="https://www.roblox.com/communities/16534848/Blissful-Studio-Co#!/" target="_blank" class="roblox-link">Visit Group</a>
-            </div>
-            <div class="roblox-group-card">
-                <h3>Miracle's Studio</h3>
-                <p>My friend's group, i work long-term with them when they need me.</p>
-                <a href="https://www.roblox.com/communities/14049662/Miracles-Studio" target="_blank" class="roblox-link">Visit Group</a>
-            </div>
-            <div class="roblox-group-card">
-                <h3>nightful interactive</h3>
-                <p>Worked on packing pals UI (scripting)</p>
-                <a href="https://www.roblox.com/communities/35940216/nightful-interactive" target="_blank" class="roblox-link">Visit Group</a>
-            </div>
-        </div>
-    </section>
-
-        <div id="about-me-modal" class="modal">
-            <div class="modal-content">
-                <span class="close-btn">&times;</span>
-                <h2>hey there, im NotDumbDev</h2><br>
-                <p>I've been scripting on roblox for 5 years, i use scripting practices like O<em style="font-size: 15px; color: gray;">bject</em>O<em style="font-size: 15px; color: gray;" >riented</em>P<em style="font-size: 15px; color: gray;">rogramming</em> and modular scripting,
-                Tho i started learning these things a bit too late... I started learning OOP & Modular Scripting around a year ago as of 2025, and im still learning better practices with time. Other than Roblox Luau i also have experience with other programming languages such as:
-                <br>- TypeScript
-                <br>- JavaScript
-                <br>- NodeJS
-                <br>- Python
-                <br>- And a little bit of assembly.
-                <br> Other than programming i also know UI Design, tho i do not specialize in UI Design i know how to make pretty good ui.
-                <br> Im also pretty fast with finishing tasks, sometimes i even finish tasks way before the deadline, of course speedy development isn't always guaranteed.
-                </p><br>
-                <h2>Outside of development</h2>
-                <p>When im not scripting, designing UI or any dev stuff, i like to spend my time drawing or going for walks, Im currently living in Germany
-                    as a student, i speak German pretty decently (tho its not perfect.), And since i live in an italian household i speak Italian fluently aswell as english.
-                    <br><br>My hobbies are pretty basic: Just gaming in general or reading. I enjoy shooters and vehicle / physics simulators the most.
-                    <br><br>I also have a big interest in aviation, particularly im a fan of Fighters. The Eurofighter Typhoon is easily my all-time favorite.
-                </p>
-            </div>
-        </div>
-
-    <section id="skills">
-        <h2>Skills</h2>
-        <div class="skills-grid">
-            <div class="skill-item">
-                <div class="skill-icon"><i class="fa-solid fa-cube"></i></div>
-                <h3>Modular OOP-Based Scripting</h3>
-                <p>For all of my scripts i use OOP if strictly needed to, if its not needed i will just use modules.</p>
-            </div>
-            <div class="skill-item">
-                <div class="skill-icon"><i class="fa-solid fa-database"></i></div>
-                <h3>Datastores</h3>
-                <p>I have a great understanding in datastores, i mostly enjoy working on long / big data store structures since i find them a fun challange</p>
-            </div>
-            <div class="skill-item">
-                <div class="skill-icon"><i class="fa-solid fa-comments"></i></div>
-                <h3>Custom Chats</h3>
-                <p>I know how to make custom chat systems with custom moderation too!.</p>
-            </div>
-            <div class="skill-item">
-                <div class="skill-icon"><i class="fa-solid fa-gun"></i></div>
-                <h3>Combat Systems</h3>
-                <p>I used to make many combat systems, from guns to melees. Still have a great understanding in them.</p>
-            </div>
-            <div class="skill-item">
-                <div class="skill-icon"><i class="fa-solid fa-car"></i></div>
-                <h3>Vehicle systems</h3>
-                <p>One of my favorite skills! I know how to make almost any vehicle, to cars to jets (my expertise here!).</p>
-            </div>
-            <div class="skill-item">
-                <div class="skill-icon"><i class="fa-solid fa-box-open"></i></div>
-                <h3>Inventory Systems</h3>
-                <p>I also have a great understanding in custom inventory systems, from simple inventories (just to equip/dequip) to more complex ones.</p>
-            </div>
-            <div class="skill-item">
-                <div class="skill-icon"><i class="fa-brands fa-discord"></i></div>
-                <h3>Discord-Roblox Bots</h3>
-                <p>I once made a bot which could pass information from discord to roblox, this was very hard but over the years i've made my own module/library to make this easier!</p>
-            </div>
-            <div class="skill-item">
-                <div class="skill-icon"><i class="fa-solid fa-server"></i></div>
-                <h3>Multi server events/announcements</h3>
-                <p>I have alot of experience with multi-server events or announcements such as global chats or global events. If i do end up making one i will always be using my library Pulse :)</p>
-            </div>
-            <div class="skill-item">
-                <div class="skill-icon">
-                    <i class="fa-solid fa-puzzle-piece"></i> <i class="fa-solid fa-code"></i> 
-                </div>
-                <h3>Plugins / Libraries</h3>
-                <p>I quite enjoy making libraries or plugins for roblox in general! they are fun to make and i gain alot of experience from this.</p>
-            </div>
-            <div class="skill-item">
-                <div class="skill-icon"><i class="fa-solid fa-terminal"></i></div>
-                <h3>Backend / API</h3>
-                <p>I mostly enjoy working on projects who have alot of backend, such as integrations to other applications like a website or application.</p>
-            </div>
-        </div>
-    </section>
-
-    <section id="reviews">
-        <h2>Client Reviews</h2>
-        <div class="reviews-grid">
-            <div class="review-card">
-                <p class="review-text">"very fantastic scripter, always helped and came up for tasks and also a great friend"</p>
-                <div class="review-author">
-                    <img class="author-avatar" src="https://cdn.discordapp.com/avatars/1291465344338366515/a_76fc6363e0f29cc512af9a414bb8e29f.webp?size=80"></img>
-                    <div class="author-info">
-                        <h4>Anony</h4>
-                        <div class="stars">
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-regular fa-star"></i>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="review-card">
-                <p class="review-text">"the scripts were very neat and clean but that doesnt come cheap, he was quick to finish all of his tasks and fixed up some bugs for me. But was overall pretty expensive, even though it was withing my budget. Customer service could also be improved as he did some weird tactics like trying to rush me to pay before allowing me to test out his scripts. Overall, I would use him again for my scripts."</p>
-                <div class="review-author">
-                    <img class="author-avatar" src="https://cdn.discordapp.com/avatars/595639975748436219/5735b565b6ac99af884101b9dbf1431e.webp?size=80"></img>
-                    <div class="author-info">
-                        <h4>DragonChan</h4>
-                        <div class="stars">
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-regular fa-star"></i>
-                            <i class="fa-regular fa-star"></i>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="review-card">
-                <p class="review-text">"great work, conversation a bit confusing but the product was good and scripts were clean!"</p>
-                <div class="review-author">
-                    <img class="author-avatar" src="https://cdn.discordapp.com/avatars/1069568476185903134/a3a3b1c35807ff26e4d35a10064867d6.webp?size=80"></img>
-                    <div class="author-info">
-                        <h4>Calamari</h4>
-                        <div class="stars">
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-regular fa-star"></i>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="review-card">
-                <p class="review-text">"recommend, he helped me with lobby check points"</p>
-                <div class="review-author">
-                    <img class="author-avatar" src="https://cdn.discordapp.com/avatars/1191086224136482857/d6e4cbf30ebf301f4cb58cb7195bf08c.webp?size=80"></img>
-                    <div class="author-info">
-                        <h4>Cpvp_imagod/itsrealk</h4>
-                        <div class="stars">
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="review-card">
-                <p class="review-text">"high quality and quick"</p>
-                <div class="review-author">
-                    <img class="author-avatar" src="https://cdn.discordapp.com/avatars/846143658046390292/a4ad97fbbbe9d1b69047a45252d0d772.webp?size=80"></img>
-                    <div class="author-info">
-                        <h4>Blossom</h4>
-                        <div class="stars">
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <div id="termsModal" class="modal">
-        <div class="modal-content">
-            <span class="close-btn">&times;</span>
-            <h2>Terms and Conditions for notdumb.dev</h2>
-            <p class="subtitle-terms">Roblox Development Services</p>
-            <p class="subtitle-terms">Effective Date: July 28, 2025</p><br>
-
-            <h1>Introduction</h1><br>
-            <p>These Terms and Conditions (“Terms”) govern the engagement of notdumb.dev (“Developer”) for Roblox development services. By engaging the Developers services, you (“Client”)
-agree to be legally bound by these Terms. Please review them carefully before proceeding.</p>
-            <br><h1 style="font-size: 1.5rem;">1 Ownership and Intellectual Property</h1>
-            <br><p>
-                1.<strong>Ownership of Work Product</strong>: The Developer retains full ownership and intellectual
-property rights to all scripts, code, and materials (“Work”) created during the project.
-The Client is granted a non-exclusive, non-transferable license to use the Work solely
-within the agreed-upon Roblox project.<br><br>
-
-                2.<strong>Restrictions on Use</strong>: The Client shall not resell, redistribute, share, or otherwise make
-the Work available to third parties without the Developers express written consent. Unauthorized distribution constitutes a breach of these Terms and may result in legal action.<br>
-            </p>
-            
-            <br><h1 style="font-size: 1.5rem;">2 Client Conduct</h1>
-            <br><p>
-                1.<strong>Professional Communication</strong>: The Client agrees to maintain professional and respectful communication with the Developer at all times. Harassment, undue pressure, or
-excessive contact regarding project timelines or deliverables is strictly prohibited.<br><br>
-
-                2.<strong>Reasonable Expectations</strong>: The Client acknowledges that development timelines may
-vary based on project complexity. The Developer will provide estimated completion dates
-in good faith, and the Client agrees to respect these estimates.
-            </p><br><br>
-
-            <h1 style="font-size: 1.5rem;">3 Payment Terms</h1>
-            <br><p>
-                1.<strong>Minimum Payment</strong>: The minimum fee for any project is 1,000 Robux. Additional
-costs may apply based on the projects scope and complexity, as mutually agreed upon in
-writing.<br><br>
-
-                2.<strong>Upfront Payment</strong>: A non-refundable deposit of 10% of the total agreed-upon project
-cost is required before work commences. The remaining balance is due upon project
-completion, unless otherwise specified in writing.<br><br>
-
-                3.<strong>No-Refund Policy</strong>: All payments, including the upfront deposit and final balance, are
-non-refundable under any circumstances, including project termination by either party.<br><br>
-
-                4.<strong>Payment Method</strong>: Payments must be made in Robux via the Roblox platform or
-through other mutually agreed-upon methods.
-            </p>
-            
-            <br><h1 style="font-size: 1.5rem;">4 General Provisions</h1>
-            <br><p>
-                1.<strong>Termination</strong>: The Developer reserves the right to terminate the project and retain
-the upfront payment if the Client breaches these Terms, including but not limited to
-harassment, non-payment, or unauthorized distribution of the Work.<br><br>
-
-                2.<strong>Modifications to Terms</strong>: The Developer may update these Terms at any time. The
-Client will be notified of changes, and continued engagement constitutes acceptance of
-the updated Terms.<br><br>
-
-                3.<strong>Governing Law</strong>: These Terms shall be governed by the laws applicable to digital services
-and intellectual property in the Developers jurisdiction of residence.
-            </p>
-            
-            <br><h1 style="font-size: 1.5rem;">5 Contact Information</h1>
-            <p>
-                For inquiries or concerns regarding these Terms or the Developers services, please contact
-notdumb.dev via the Roblox platform or other agreed-upon communication channels.
-            </p> <br><br>
-
-            <p class="subtitle-terms"><em>By engaging or hiring notdumb.dev, you acknowledge that you have read, understood, and
-agree to be bound by these Terms and Conditions.</em></p>
-        </div>
+    <div class="location-time">
+      <div class="labels">
+        <span><i class="fa-solid fa-location-dot"></i> Based In</span>
+        <span><i class="fa-regular fa-clock"></i> My Current Time</span>
+        <span><i class="fa-solid fa-globe"></i> Timezone</span>
+      </div>
+      <div class="values">
+        <span>Saarland, Germany</span>
+        <span id="current-time">Loading...</span>
+        <span id="timezone-info">Loading...</span>
+      </div>
     </div>
 
-    <section id="termsandconditions">
-        <h2>Terms & Conditions</h2>
-        <div class="terms-buttons">
-            <a href="#terms" class="cta-button">Open Terms Page</a>
-            <a href="downloadables/Terms.pdf" class="cta-button" download>Download PDF Version</a>
-        </div>
-    </section>
-
-    <div id="discordModal" class="modal">
-        <div class="modal-content">
-            <span class="close-btn">&times;</span>
-            <h2><i class="fa-brands fa-discord"></i> Contact me on Discord</h2>
-            <p style="text-align: center;">You can contact me directly on discord, though i wont be accepting any friend requests.</p>
-            <br>
-            <div class="discord-info">
-                <p><strong>Username:</strong> euro_fighter.</p>
-                <button id="copyDiscord" class="cta-button">Copy Username</button>
-            </div>
-        </div>
+    <div class="tech-stack">
+      <span class="tech-item"><svg width="15" height="15" viewBox="0 0 490 491" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M64.5045 8.43799C65.3684 2.98325 70.4911 -0.739244 75.9459 0.124512L480.684 64.229C486.139 65.0932 489.861 70.2157 488.997 75.6704L424.616 482.15C423.752 487.604 418.63 491.326 413.175 490.462L8.43707 426.358C2.98245 425.494 -0.739371 420.371 0.124573 414.917L64.5045 8.43799ZM319.009 412.867C317.874 420.184 318.197 426.629 319.98 432.201C321.769 437.732 324.741 442.205 328.895 445.619C333.095 448.999 338.197 451.156 344.203 452.087C351.083 453.155 357.123 452.421 362.322 449.888C367.56 447.361 371.612 443.694 374.476 438.884L375.43 439.032L372.904 455.318L393.842 458.567L408.059 366.936L386.464 363.585L378.226 416.679C377.504 421.332 375.928 425.058 373.499 427.858C371.115 430.624 368.311 432.552 365.087 433.64C361.864 434.728 358.661 435.025 355.479 434.532C350.309 433.73 346.399 431.371 343.748 427.458C341.097 423.544 340.222 418.684 341.123 412.877L349.657 357.875L328.061 354.524L319.009 412.867ZM269.307 344.186C262.904 343.193 256.909 343.24 251.324 344.329C245.744 345.377 240.832 347.507 236.586 350.717C232.348 353.888 229.001 358.134 226.546 363.455L246.266 369.447C247.827 366.472 250.318 364.067 253.738 362.236C257.198 360.411 261.573 359.908 266.862 360.729C271.873 361.506 275.52 363.335 277.802 366.214C280.084 369.093 280.876 372.78 280.179 377.274L280.124 377.632C279.803 379.7 278.79 381.111 277.085 381.865C275.425 382.585 272.888 382.924 269.473 382.883C266.065 382.802 261.633 382.623 256.177 382.347C251.649 382.133 247.213 382.24 242.871 382.666C238.574 383.058 234.618 384.012 231.003 385.528C227.387 387.044 224.363 389.344 221.929 392.428C219.496 395.512 217.878 399.64 217.076 404.81C216.144 410.815 216.692 416.073 218.721 420.583C220.79 425.098 223.968 428.769 228.254 431.592C232.587 434.382 237.656 436.228 243.462 437.128C248.235 437.869 252.493 437.857 256.236 437.094C260.025 436.297 263.262 434.988 265.948 433.165C268.68 431.308 270.9 429.208 272.607 426.867L273.323 426.977L271.37 439.565L292.129 442.786L301.645 381.459C302.589 375.375 302.262 370.131 300.665 365.729C299.107 361.333 296.7 357.682 293.445 354.774C290.196 351.826 286.464 349.496 282.25 347.783C278.036 346.07 273.721 344.871 269.307 344.186ZM120.341 382.043C119.206 389.361 119.529 395.805 121.312 401.376C123.101 406.908 126.073 411.38 130.227 414.794C134.427 418.175 139.53 420.331 145.535 421.263C152.415 422.331 158.455 421.598 163.654 419.065C168.893 416.538 172.944 412.87 175.808 408.06L176.762 408.208L174.236 424.494L195.174 427.743L209.391 336.112L187.796 332.761L179.558 385.855C178.836 390.508 177.261 394.234 174.831 397.034C172.447 399.8 169.643 401.728 166.419 402.816C163.196 403.904 159.994 404.201 156.812 403.708C151.642 402.905 147.731 400.547 145.08 396.633C142.429 392.72 141.554 387.859 142.455 382.053L150.989 327.05L129.393 323.7L120.341 382.043ZM275.694 406.574C275.169 409.954 273.81 412.941 271.616 415.533C269.461 418.131 266.658 420.059 263.205 421.315C259.758 422.531 255.867 422.803 251.532 422.13C247.038 421.433 243.496 419.845 240.908 417.367C238.319 414.888 237.334 411.66 237.951 407.683C238.383 404.899 239.47 402.746 241.213 401.224C242.963 399.663 245.187 398.582 247.886 397.983C250.586 397.384 253.58 397.116 256.87 397.178C258.332 397.202 260.059 397.225 262.051 397.249C264.043 397.272 266.061 397.26 268.105 397.21C270.149 397.161 272.004 397.021 273.669 396.791C275.373 396.566 276.607 396.229 277.37 395.777L275.694 406.574ZM20.98 400.716L96.9214 412.499L99.8004 393.946L45.9908 385.597L62.0689 281.975L39.9361 278.542L20.98 400.716ZM379.464 80.2104C374.015 79.3156 368.871 83.0078 367.976 88.4575L356.973 155.452C356.078 160.901 359.771 166.046 365.22 166.941L431.861 177.885C437.311 178.78 442.454 175.088 443.349 169.638L454.352 102.643C455.247 97.1935 451.555 92.0499 446.105 91.1548L379.464 80.2104Z" fill="var(--accent)"/>
+</svg> Luau</span>
+      <span class="tech-item"><svg width="15" height="15" viewBox="0 0 448 448" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M21 0C9.37067 0 0 9.37067 0 21V427C0 438.629 9.37067 448 21 448H427C438.629 448 448 438.629 448 427V21C448 9.37067 438.629 0 427 0H21ZM345.109 182C356.533 182 366.651 182.691 375.48 184.072C383.808 185.32 391.98 187.447 399.859 190.419V236.301C396.077 233.686 392.058 231.43 387.856 229.563C383.522 227.613 379.048 225.99 374.472 224.709C365.803 222.294 356.852 221.038 347.853 220.976C342.253 220.976 337.157 221.499 332.565 222.581C328.473 223.457 324.546 224.982 320.936 227.099C317.763 229.04 315.336 231.373 313.6 234.08C311.854 236.808 310.945 239.988 310.987 243.227C310.987 246.885 311.976 250.189 313.899 253.101C315.84 256.013 318.603 258.776 322.168 261.389C325.733 264.003 330.064 266.541 335.16 269.043C340.256 271.563 346.024 274.157 352.445 276.808C361.219 280.485 369.096 284.405 376.077 288.531C383.059 292.675 389.051 297.36 394.053 302.587C399.056 307.795 402.864 313.749 405.515 320.451C408.165 327.152 409.509 334.936 409.509 343.84C409.509 356.104 407.176 366.427 402.547 374.752C398.024 382.963 391.533 389.922 383.656 395.005C375.166 400.389 365.756 404.16 355.899 406.131C345.333 408.371 334.189 409.491 322.485 409.491C310.966 409.541 299.467 408.516 288.139 406.429C278.337 404.734 268.832 401.635 259.915 397.227V348.133C276.785 362.49 298.186 370.424 320.339 370.533C326.555 370.533 331.987 369.973 336.616 368.853C341.264 367.733 345.128 366.165 348.245 364.187C351.344 362.171 353.659 359.819 355.208 357.093C356.92 353.92 357.699 350.327 357.455 346.73C357.211 343.132 355.953 339.678 353.827 336.765C351.053 333.095 347.661 329.937 343.803 327.432C339.018 324.26 333.979 321.488 328.739 319.144C322.527 316.307 316.26 313.594 309.941 311.005C292.805 303.856 280.037 295.101 271.619 284.779C263.219 274.456 259 261.968 259 247.352C259 235.891 261.296 226.053 265.888 217.821C270.48 209.589 276.715 202.813 284.629 197.493C293.001 191.971 302.294 187.994 312.069 185.752C322.896 183.199 333.986 181.94 345.109 182ZM63 185.509H241.509V225.941H177.445V406H126.728V225.941H63V185.509Z" fill="var(--accent)"/>
+</svg> TypeScript</span>
+      <span class="tech-item"><i class="fa-brands fa-js"></i> JavaScript</span>
+      <span class="tech-item"><i class="fa-brands fa-node-js"></i> NodeJS</span>
+      <span class="tech-item"><i class="fa-brands fa-react"></i> React/Roact</span>
+      <span class="tech-item"><svg class="rbxts-icon" width="15" height="15" viewBox="0 0 448 448" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M21 0C9.37067 0 0 9.37067 0 21V427C0 438.629 9.37067 448 21 448H427C438.629 448 448 438.629 448 427V21C448 9.37067 438.629 0 427 0H21ZM345.109 182C356.533 182 366.651 182.691 375.48 184.072C383.808 185.32 391.98 187.447 399.859 190.419V236.301C396.077 233.686 392.058 231.43 387.856 229.563C383.522 227.613 379.048 225.99 374.472 224.709C365.803 222.294 356.852 221.038 347.853 220.976C342.253 220.976 337.157 221.499 332.565 222.581C328.473 223.457 324.546 224.982 320.936 227.099C317.763 229.04 315.336 231.373 313.6 234.08C311.854 236.808 310.945 239.988 310.987 243.227C310.987 246.885 311.976 250.189 313.899 253.101C315.84 256.013 318.603 258.776 322.168 261.389C325.733 264.003 330.064 266.541 335.16 269.043C340.256 271.563 346.024 274.157 352.445 276.808C361.219 280.485 369.096 284.405 376.077 288.531C383.059 292.675 389.051 297.36 394.053 302.587C399.056 307.795 402.864 313.749 405.515 320.451C408.165 327.152 409.509 334.936 409.509 343.84C409.509 356.104 407.176 366.427 402.547 374.752C398.024 382.963 391.533 389.922 383.656 395.005C375.166 400.389 365.756 404.16 355.899 406.131C345.333 408.371 334.189 409.491 322.485 409.491C310.966 409.541 299.467 408.516 288.139 406.429C278.337 404.734 268.832 401.635 259.915 397.227V348.133C276.785 362.49 298.186 370.424 320.339 370.533C326.555 370.533 331.987 369.973 336.616 368.853C341.264 367.733 345.128 366.165 348.245 364.187C351.344 362.171 353.659 359.819 355.208 357.093C356.92 353.92 357.699 350.327 357.455 346.73C357.211 343.132 355.953 339.678 353.827 336.765C351.053 333.095 347.661 329.937 343.803 327.432C339.018 324.26 333.979 321.488 328.739 319.144C322.527 316.307 316.26 313.594 309.941 311.005C292.805 303.856 280.037 295.101 271.619 284.779C263.219 274.456 259 261.968 259 247.352C259 235.891 261.296 226.053 265.888 217.821C270.48 209.589 276.715 202.813 284.629 197.493C293.001 191.971 302.294 187.994 312.069 185.752C322.896 183.199 333.986 181.94 345.109 182ZM63 185.509H241.509V225.941H177.445V406H126.728V225.941H63V185.509Z" fill="var(--accent)"/>
+</svg> rbxts</span>
+      <span class="tech-item">Rojo</span>
+      <span class="tech-item">Wally</span>
+      <span class="tech-item"><i class="fa-solid fa-code"></i> VSCode</span>
+      <span class="tech-item"><i class="fa-brands fa-figma"></i> Figma</span>
     </div>
 
-    <section id="contact">
-        <div class="contact">
-            <h2>Contact me!</h2>
-            <p>Available only for one time commissions. Reach out with your project details and I will try to reply as soon as possible!</p>
-            <div class="contact-links">
-                <a class="contact-link">
-                    <i class="fa-brands fa-discord"></i> Discord
-                </a>
-                <a href="mailto:notdumbdev0@gmail.com" rel="noopener noreferrer" class="contact-link">
-                    <i class="fa-solid fa-envelope"></i> Email Me
-                </a>
+    <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; margin-top: 24px;">
+      <button onclick="openModal('aboutModal')" style="background: #1a1a1a; border: 2px solid var(--accent);">About Me</button>
+      <button onclick="window.location.href='blog.html'" 
+        style="background: #1a1a1a; border: 2px solid var(--accent); padding: 10px 20px; border-radius: 12px; color: var(--accent); text-decoration: none; font-weight: 600;">
+        <i class="fa-solid fa-square-rss"></i> Blog
+      </button>
+    </div>
+  </section>
 
-                <a href="https://www.roblox.com/users/4067261404" target="_blank" rel="noopener noreferrer" class="contact-link">
-                    Roblox Profile
-                </a>
-            </div>
-        </div>
-    </section>
+
+  <section id="projects">
+    <h2>Projects <span style="color: var(--accent); font-size: medium;"> || Additionally video showcases will be shown upon being asked.</span></h2>
+    <div class="grid" id="projectGrid"></div>
+  </section>
+
+  <section id="groups">
+    <h2>Contributed Groups</h2>
+    <div class="grid" id="groupGrid"></div>
+  </section>
+
+  <section id="skills">
+    <h2>Skills</h2>
+    <div class="grid">
+      <div class="card">
+        <div class="icon-wrapper"><i class="fa-solid fa-cubes"></i></div>
+        <h3>Modular OOP-Based Scripting</h3>
+        <p>For all of my scripts i use OOP if strictly needed to, if its not needed i will just use modules.  </p>
+      </div>
+      <div class="card">
+        <div class="icon-wrapper"><i class="fa-solid fa-database"></i></div>
+        <h3>Datastores</h3>
+        <p>I have a great understanding in datastores, i mostly enjoy working on long / big data store structures since i find them a fun challange.</p>
+      </div>
+      <div class="card">
+        <div class="icon-wrapper"><i class="fa-solid fa-comments"></i></div>
+        <h3>Custom Chats</h3>
+        <p>I used to make many combat systems, from guns to melees. Still have a great understanding in them.</p>
+      </div>
+      <div class="card">
+        <div class="icon-wrapper"><i class="fa-solid fa-gun"></i></div>
+        <h3>Combat Systems</h3>
+        <p>I used to make many combat systems, from guns to melees. Still have a great understanding in them.</p>
+      </div>
+      <div class="card">
+        <div class="icon-wrapper"><i class="fa-solid fa-car"></i></div>
+        <h3>Vehicle Systems</h3>
+        <p>One of my favorite skills! I know how to make almost any vehicle, to cars to jets (my expertise here!).</p>
+      </div>
+      <div class="card">
+        <div class="icon-wrapper"><i class="fa-solid fa-box-open"></i></div>
+        <h3>Inventory Systems</h3>
+        <p>I also have a great understanding in custom inventory systems, from simple inventories (just to equip/dequip) to more complex ones.</p>
+      </div>
+      <div class="card">
+        <div class="icon-wrapper"><i class="fa-brands fa-discord"></i></div>
+        <h3>Discord-Roblox Bots</h3>
+        <p>I once made a bot which could pass information from discord to roblox, this was very hard but over the years i've made my own module/library to make this easier!</p>
+      </div>
+      <div class="card">
+        <div class="icon-wrapper"><i class="fa-solid fa-server"></i></div>
+        <h3>Multi server events/announcements</h3>
+        <p>I have alot of experience with multi-server events or announcements such as global chats or global events. If i do end up making one i will always be using my library Pulse :)</p>
+      </div>
+      <div class="card">
+        <div class="icon-wrapper"><i class="fa-solid fa-code"></i></div>
+        <h3>Plugins / Libraries</h3>
+        <p>I quite enjoy making libraries or plugins for roblox in general! they are fun to make and i gain alot of experience from this.</p>
+      </div>
+      <div class="card">
+        <div class="icon-wrapper"><i class="fa-solid fa-terminal"></i></div>
+        <h3>Backend / APIs</h3>
+        <p>I mostly enjoy working on projects who have alot of backend, such as integrations to other applications like a website or application.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="reviews">
+    <h2>Reviews</h2>
+    <div class="grid" id="reviewGrid"></div>
+    <div style="text-align: center; margin-top: 24px;">
+      <button id="showMoreReviews" style="background: var(--accent); border: none; color: white; padding: 12px 24px; border-radius: 10px; font-weight: 600; cursor: pointer; transition: all .3s;">
+        <i class="fa-solid fa-chevron-down"></i> Show All Reviews
+      </button>
+    </div>
+  </section>
+
+  <section id="terms">
+    <h2>Terms & Conditions</h2>
+    <div class="card" style="text-align: center;">
+      <p style="margin-bottom: 24px;">Before working together, please review my terms and conditions to ensure we're on the same page.</p>
+      <button onclick="openModal('termsModal')" style="background: var(--accent); border: none; color: white; padding: 14px 30px; border-radius: 10px; font-weight: 600; cursor: pointer; transition: all .3s; font-size: 18px;">
+        <i class="fa-solid fa-file-contract"></i> View Terms & Conditions
+      </button>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2>Contact</h2>
+    <div class="card" style="text-align:center;">
+      <p style="margin-bottom: 24px;">Here are my socials, you can contact me by using these socials:</p>
+      <div class="contact-buttons">
+        <a class="contact-button" href="mailto:notdumbdev0@gmail.com"><i class="fa-solid fa-envelope"></i> Email</a>
+        <a class="contact-button" href="https://github.com/NotDumbDev"><i class="fa-brands fa-github"></i> Github</a>
+        <a class="contact-button" href="https://discord.gg/7wa2Y8wYdT" target="_blank"><i class="fa-brands fa-discord"></i> Business Server</a>
+        <a class="contact-button" href="https://www.roblox.com/users/4067261404/profile" target="_blank"><svg width="20" height="20" viewBox="0 0 24 24" fill="#ffff" xmlns="http://www.w3.org/2000/svg"><title>Roblox</title><path d="M18.926 23.998 0 18.892 5.075.002 24 5.108ZM15.348 10.09l-5.282-1.453-1.414 5.273 5.282 1.453z"/></svg> Roblox</a>
+      </div>
+    </div>
+  </section>
+
+  <div id="aboutModal" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2><i class="fa-solid fa-user"></i> About Me</h2>
+        <button class="modal-close" onclick="closeModal('aboutModal')">
+          <i class="fa-solid fa-times"></i>
+        </button>
+      </div>
+
+      <div class="modal-body">
+        <p>
+          I've been scripting on Roblox for around 5 years.  
+          I use scripting practices like <strong>OOP</strong> and <strong>Modular Scripting</strong>. Though i started learning them only about a year ago (as of 2025).  
+          I'm still improving and learning better practices with time.
+        </p>
+
+        <h3><i class="fa-solid fa-code"></i> Other Languages I Know</h3>
+        <ul>
+          <li><strong><i class="fa-brands fa-js"></i> JavaScript:</strong> makes websites actually interactive.</li>
+          <li><strong><svg width="15" height="15" viewBox="0 0 448 448" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M21 0C9.37067 0 0 9.37067 0 21V427C0 438.629 9.37067 448 21 448H427C438.629 448 448 438.629 448 427V21C448 9.37067 438.629 0 427 0H21ZM345.109 182C356.533 182 366.651 182.691 375.48 184.072C383.808 185.32 391.98 187.447 399.859 190.419V236.301C396.077 233.686 392.058 231.43 387.856 229.563C383.522 227.613 379.048 225.99 374.472 224.709C365.803 222.294 356.852 221.038 347.853 220.976C342.253 220.976 337.157 221.499 332.565 222.581C328.473 223.457 324.546 224.982 320.936 227.099C317.763 229.04 315.336 231.373 313.6 234.08C311.854 236.808 310.945 239.988 310.987 243.227C310.987 246.885 311.976 250.189 313.899 253.101C315.84 256.013 318.603 258.776 322.168 261.389C325.733 264.003 330.064 266.541 335.16 269.043C340.256 271.563 346.024 274.157 352.445 276.808C361.219 280.485 369.096 284.405 376.077 288.531C383.059 292.675 389.051 297.36 394.053 302.587C399.056 307.795 402.864 313.749 405.515 320.451C408.165 327.152 409.509 334.936 409.509 343.84C409.509 356.104 407.176 366.427 402.547 374.752C398.024 382.963 391.533 389.922 383.656 395.005C375.166 400.389 365.756 404.16 355.899 406.131C345.333 408.371 334.189 409.491 322.485 409.491C310.966 409.541 299.467 408.516 288.139 406.429C278.337 404.734 268.832 401.635 259.915 397.227V348.133C276.785 362.49 298.186 370.424 320.339 370.533C326.555 370.533 331.987 369.973 336.616 368.853C341.264 367.733 345.128 366.165 348.245 364.187C351.344 362.171 353.659 359.819 355.208 357.093C356.92 353.92 357.699 350.327 357.455 346.73C357.211 343.132 355.953 339.678 353.827 336.765C351.053 333.095 347.661 329.937 343.803 327.432C339.018 324.26 333.979 321.488 328.739 319.144C322.527 316.307 316.26 313.594 309.941 311.005C292.805 303.856 280.037 295.101 271.619 284.779C263.219 274.456 259 261.968 259 247.352C259 235.891 261.296 226.053 265.888 217.821C270.48 209.589 276.715 202.813 284.629 197.493C293.001 191.971 302.294 187.994 312.069 185.752C322.896 183.199 333.986 181.94 345.109 182ZM63 185.509H241.509V225.941H177.445V406H126.728V225.941H63V185.509Z" fill="white"/>
+  </svg>
+  TypeScript:</strong> its basically JavaScript but better (is type safe).</li>
+          <li><strong><i class="fa-brands fa-node-js"></i> Node.js:</strong> Runs JavaScript outside of a browser.</li>
+          <li><strong><i class="fa-brands fa-python"></i> Python:</strong> a simple and clean programming language, mostly used for AI and Automation.</li>
+        </ul>
+
+        <h3><i class="fa-solid fa-comments"></i> Communication & Teamwork</h3>
+        <p>
+          I work well with teams and keep communication open and clear.  
+          I value feedback, consistent updates and staying organized on the project.
+        </p>
+
+        <h3><i class="fa-solid fa-palette"></i> Other Skills</h3>
+        <p>
+          Other than programming, i have experience with <strong>UI Design</strong>.  
+          I dont specialize in it, but i can create pretty decent UI.
+          <br><br>
+          I also have skills in <strong>3D Design/Modelling</strong>, both low poly and high poly, I used to model vehicles like cars and planes.
+        </p>
+
+        <h3><i class="fa-solid fa-earth-europe"></i> Outside Development</h3>
+        <p>
+          When im not scripting or doing anything dev-related, I spend time drawing or going for walks.  
+          I currently live in <strong>Germany</strong> as a student; I speak <strong>English</strong> and <strong>Italian</strong> fluently, and my German is pretty decent too.
+        </p>
+
+        <p>
+          My favourite band is <a href="https://www.youtube.com/channel/UC9JbM05UbvSaRCLYGqwFncA" target="_blank" class="band-btn">
+            <i class="fa-brands fa-youtube"></i> @TheKolorsOfficial</a>
+          They're a italian band, i am a pretty big fan of the band, i listen to them sometimes while working on projects, it keeps me motivated and focused.
+        </p>
+
+        <p>
+          My hobbies are pretty simple: gaming & reading.  
+          I enjoy shooters and vehicle/physics simulators the most.
+        </p>
+
+        <p>
+          I'm also a big aviation enthusiast im especially into fighter jets.  
+          The <strong>Eurofighter Typhoon</strong> is my all time favorite.
+        </p>
+
+        <h3><i class="fa-solid fa-heart"></i> Other Things About Me</h3>
+        <p>
+          Im a <strong>transfemme</strong>.
+          Im very proud of who i am even tho most of the world is against it.
+        </p>
+
+        <p>
+          My Discord & GitHub Profile Picture was made by <span style="color: var(--accent); font-weight: 700;">@whitemaskanimator</span> (thank you!)
+        </p>
+        <p style="font-size: small; color: var(--accent);"><i>If you're reading this and are trying to hire me please refer to me as <strong>"Emilia"</strong>. Thank you! :D</i></p>
+      </div>
+    </div>
+  </div>
+
+  <div id="projectModal" class="modal">
+    <div class="modal-content">
+      <button class="modal-close" onclick="closeModal('projectModal')">
+        <i class="fa-solid fa-times"></i>
+      </button>
+      <div class="modal-body" id="projectModalBody"></div>
+    </div>
+  </div>
+
+  <div id="termsModal" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2><i class="fa-solid fa-file-contract"></i> Terms and Conditions for notdumb.dev</h2>
+        <button class="modal-close" onclick="closeModal('termsModal')"><i class="fa-solid fa-times"></i></button>
+      </div>
+      <div class="modal-body">
+        <p>Roblox Development Services</p>
+        <p>Effective Date: July 28, 2025</p>
+
+        <h3><i class="fa-solid fa-handshake"></i> Introduction</h3>
+        <p>
+          These Terms and Conditions (“Terms”) govern the engagement of notdumb.dev (“Developer”) for Roblox development services. By engaging the Developers services, you (“Client”) agree to be legally bound by these Terms. Please review them carefully before proceeding.
+        </p>
+
+        <h3><i class="fa-solid fa-copyright"></i> 1. Ownership and Intellectual Property</h3>
+        <ul>
+          <li><strong>1.1 Ownership of Work Product:</strong> The Developer retains full ownership and intellectual property rights to all scripts, code, and materials (“Work”) created during the project. The Client is granted a non-exclusive, non-transferable license to use the Work solely within the agreed-upon Roblox project.</li>
+          <li><strong>1.2 Restrictions on Use:</strong> The Client shall not resell, redistribute, share, or otherwise make the Work available to third parties without the Developers express written consent. Unauthorized distribution constitutes a breach of these Terms and may result in legal action.</li>
+        </ul>
+
+        <h3><i class="fa-solid fa-user-shield"></i> 2. Client Conduct</h3>
+        <ul>
+          <li><strong>2.1 Professional Communication:</strong> The Client agrees to maintain professional and respectful communication with the Developer at all times. Harassment, undue pressure, or excessive contact regarding project timelines or deliverables is strictly prohibited.</li>
+          <li><strong>2.2 Reasonable Expectations:</strong> The Client acknowledges that development timelines may vary based on project complexity. The Developer will provide estimated completion dates in good faith, and the Client agrees to respect these estimates.</li>
+        </ul>
+
+        <h3><i class="fa-solid fa-coins"></i> 3. Payment Terms</h3>
+        <ul>
+          <li><strong>3.1 Minimum Payment:</strong> The minimum fee for any project is 1,000 Robux. Additional costs may apply based on the projects scope and complexity, as mutually agreed upon in writing. </li>
+          <li><strong>3.2 Upfront Payment:</strong> A non-refundable deposit of 10% of the total agreed-upon project cost is required before work commences. The remaining balance is due upon project completion, unless otherwise specified in writing.</li>
+          <li><strong>3.3 No-Refund Policy:</strong> All payments, including the upfront deposit and final balance, are non-refundable under any circumstances, including project termination by either party. </li>
+          <li><strong>3.4 Payment Method:</strong> Payments must be made in Robux via the Roblox platform or through other mutually agreed-upon methods.</li>
+        </ul>
+
+        <h3><i class="fa-solid fa-gavel"></i> 4. General Provisions</h3>
+        <ul><li><strong>4.1 Termination:</strong> The Developer reserves the right to terminate the project and retain the upfront payment if the Client breaches these Terms, including but not limited to harassment, non-payment, or unauthorized distribution of the Work.</li>
+          <li><strong>4.2 Modifications to Terms:</strong> The Developer may update these Terms at any time. The Client will be notified of changes, and continued engagement constitutes acceptance of the updated Terms.</li>
+          <li><strong>4.3 Governing Law:</strong> These Terms shall be governed by the laws applicable to digital services and intellectual property in the Developers jurisdiction of residence.</li>
+        </ul>
+
+        <h3><i class="fa-solid fa-address-book"></i> 5. Contact Information</h3>
+        <p>For inquiries or concerns regarding these Terms or the Developers services, please contact notdumb.dev via the Roblox platform or other agreed-upon communication channels.</p>
+
+        <p style="margin-top: 24px; padding-top: 16px; border-top: 1px solid #1f1f1f;"> By engaging or hiring notdumb.dev, you acknowledge that you have read, understood, and agree to be bound by these Terms and Conditions. </p>
+      </div>
+    </div>
+  </div>
+
+  <footer>© <span id="year"></span> Emilia (notdumbdev). All rights reserved.</footer>
+
 </body>
 </html>

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>NotDumbDev's Blog</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="blogCss.css">
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+
+    <script defer>
+      async function loadBlog() {
+  const container = document.getElementById("blogContainer");
+  if (!container) return console.error("❌ blogContainer not found");
+
+  try {
+    const res = await fetch("posts/index.json");
+    const files = await res.json();
+
+    for (const file of files.reverse()) {
+      const mdRes = await fetch(`posts/${file}`);
+      const rawText = await mdRes.text();
+
+      const metaMatch = rawText.match(/^---\r?\n([\s\S]*?)\r?\n---/);
+      let metadata = {}, content = rawText;
+
+      if (metaMatch) {
+        const metaText = metaMatch[1];
+        metaText.split("\n").forEach((line) => {
+          const [key, ...rest] = line.split(":");
+          metadata[key.trim()] = rest.join(":").trim().replace(/^"|"$/g, "");
+        });
+        content = rawText.replace(metaMatch[0], "").trim();
+      }
+
+      const html = marked.parse(content);
+
+      // Create preview card
+      const card = document.createElement("article");
+      card.className = "blog-post";
+      card.innerHTML = `
+        <h2>${metadata.title || file}</h2>
+        <p class="blog-date">${metadata.date || "Unknown date"}</p>
+        <p class="blog-desc">${metadata.desc || ""}</p>
+        <button class="preview-btn">Read More</button>
+      `;
+
+      // Open modal on click
+      card.querySelector(".preview-btn").addEventListener("click", () => {
+        document.getElementById("modalTitle").textContent = metadata.title;
+        document.getElementById("modalContent").innerHTML = html;
+        openModal("blogModal");
+      });
+
+      container.appendChild(card);
+    }
+  } catch (err) {
+    console.error("❌ Failed to load blog:", err);
+    container.textContent = "Could not load blog posts.";
+  }
+}
+
+        // Modal functions
+        function openModal(modalId) {
+        const modal = document.getElementById(modalId);
+        modal.classList.add("active");
+        document.body.style.overflow = "hidden";
+        }
+        function closeModal(modalId) {
+        const modal = document.getElementById(modalId);
+        modal.classList.remove("active");
+        document.body.style.overflow = "auto";
+        }
+
+        // Close modal on outside click or ESC
+        window.addEventListener("click", (e) => {
+        if (e.target.classList.contains("modal")) closeModal(e.target.id);
+        });
+        window.addEventListener("keydown", (e) => {
+        if (e.key === "Escape") {
+            document.querySelectorAll(".modal.active").forEach((modal) => closeModal(modal.id));
+        }
+        });
+
+        document.addEventListener("DOMContentLoaded", loadBlog);
+
+    </script>
+  </head>
+  <body>
+    <section id="blog">
+        <h1><i class="fa-solid fa-square-rss"></i></i> Blog</h1>
+        <span style="color: var(--accent); text-align: center; display: flex; align-items: center; justify-content: center; font-weight: 700;">TW: Some posts might contain profanity!</span>
+        <div id="blogContainer" class="blog-grid"></div>
+
+        <div id="blogModal" class="modal">
+            <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="modalTitle"></h2>
+                <button class="modal-close" onclick="closeModal('blogModal')">
+                <i class="fa-solid fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body" id="modalContent"></div>
+            </div>
+        </div>
+    </section>
+
+  </body>
+</html>
