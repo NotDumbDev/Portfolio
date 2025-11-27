@@ -5,6 +5,11 @@
   --muted: #9a9a9a;
   font-family: "Inter", sans-serif;
 }
+
+::-webkit-scrollbar {
+  display: none;
+}
+
 * {
   margin: 0;
   padding: 0;
